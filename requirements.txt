@@ -1,0 +1,47 @@
+# --- Deep Learning Framework ---
+torch
+torchvision
+torchaudio
+
+# --- Hugging Face ecosystem ---
+transformers
+#datasets
+huggingface_hub
+accelerate
+tokenizers
+
+# --- ML Ops / Experiment Tracking ---
+mlflow-skinny
+optuna                 # (opcional) para tuning de hiperparámetros
+
+# --- ONNX / Exportación / Inferencia ---
+onnx
+onnxruntime
+onnxruntime-gpu        # si tenés GPU CUDA
+
+# --- Entrenamiento y utilidades ---
+scikit-learn
+numpy
+pandas
+matplotlib
+seaborn
+tqdm
+jupyter
+jupyterlab
+
+# --- Servir modelos (opcional, estilo real-life) ---
+fastapi
+uvicorn
+
+# --- Seguridad y compatibilidad ---
+python-dotenv
+
+# Cookiecutter
+loguru
+mkdocs
+pip
+python-dotenv
+ruff
+tqdm
+typer
+-e .

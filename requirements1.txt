@@ -1,0 +1,2 @@
+# --- Seguridad y compatibilidad ---
+python-dotenv
