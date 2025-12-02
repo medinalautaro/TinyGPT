@@ -2,6 +2,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 from loguru import logger
+import os
 
 # Load environment variables from .env file if it exists
 load_dotenv()
@@ -30,3 +31,21 @@ try:
     logger.add(lambda msg: tqdm.write(msg, end=""), colorize=True)
 except ModuleNotFoundError:
     pass
+
+from huggingface_hub import login
+import mlflow
+
+def setup_huggingface(token: str):
+    if token is None:
+        token = os.getenv("HUGGINGFACE_TOKEN")
+
+    if not token:
+        raise ValueError(
+            "No Hugging Face token found. Set HUGGINGFACE_TOKEN in your .env file."
+        )
+    login(token=token)
+    
+
+def setup_mlflow():
+    mlflow.set_tracking_uri("file:./mlruns")
+    mlflow.set_experiment("tinygpt-experiment")
